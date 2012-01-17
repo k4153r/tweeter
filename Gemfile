@@ -19,8 +19,10 @@ group :development, :test do
 	#gem 'annotate','2.4.0'
 end
 
+# gemfile
 group :production do
-	#gem 'activerecord-postgresql-adapter'
+  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+  gem 'pg', '0.12.2'
 end
 
 group :test do
