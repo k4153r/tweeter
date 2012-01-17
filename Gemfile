@@ -1,12 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-
+	
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,9 +13,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
+group :development, :test do
+	gem 'sqlite3'
 	gem 'rspec-rails', '2.7.0'
 	#gem 'annotate','2.4.0'
+end
+
+group :production do
+	#gem 'activerecord-postgresql-adapter'
 end
 
 group :test do
