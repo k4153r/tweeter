@@ -13,22 +13,25 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
+gem 'gravatar_image_tag', '1.0.0.pre2'
+
+group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.7.0'
 	#gem 'annotate','2.4.0'
 end
 
-# gemfile
-group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
-  gem 'pg', '0.12.2'
-end
-
 group :test do
+	gem 'sqlite3'
 	gem 'rspec-rails', '2.7.0'
 	gem 'webrat', '0.7.3'
 	gem 'autotest', '4.4.6'
+	gem 'factory_girl_rails', '1.0'
+end
+
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'pg', '0.12.2'
 end
 
 gem 'jquery-rails'
