@@ -23,13 +23,14 @@ class User < ActiveRecord::Base
   end
   
   def self.authenticate(email, submitted_password)
-    valid_user=User.find_by_email(email)
-    if valid_user
-      valid_user.has_password?(submitted_password)
-    else
-      valid_user=nil
-    end
-    valid_user
+      user = find_by_email(email)
+      if user.nil?
+        nil
+      elsif user.has_password?(submitted_password)
+        user
+      else
+        nil
+      end
   end
   
   private
